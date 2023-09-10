@@ -56,7 +56,7 @@ func getPrintString() string {
 
 func getChezMoiString() string {
 	if (len(os.Getenv("CHEZMOI")) > 0) {
-		return "🇫🇷🏠:"
+		return "🇫🇷:"
 	} else {
 		return ""
 	}
