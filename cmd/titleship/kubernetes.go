@@ -2,13 +2,30 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"log"
 	"os"
 	"strings"
+//	yaml "gopkg.in/yaml.v3"
 )
 
 func init() {
 	modmap["K8SC"] = getKubeContextString
+	modmap["K8CN"] = getKubeClusterNamespaceString
+}
+
+func getKubeClusterNamespaceString() string {
+	kubeConfigEnv := os.Getenv("KUBECONFIG")
+	if (len(kubeConfigEnv) == 0) {
+		kubeConfigEnv = envHome + "/.kube/config"
+	}
+	
+	configfiles := strings.Split(kubeConfigEnv, ":")
+	for _, configfilename := range(configfiles) {
+		fmt.Println(configfilename)
+	}
+
+	return ""
 }
 
 func getKubeContextString() string {

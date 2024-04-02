@@ -1,3 +1,6 @@
 # github.com/pborman/ansi v1.0.0
 ## explicit
 github.com/pborman/ansi
+# gopkg.in/yaml.v3 v3.0.1
+## explicit
+gopkg.in/yaml.v3
